@@ -1,0 +1,40 @@
+#! /bin/bash 
+# tex build: build via xelatex or pdflatex
+# author: hyiltiz@gmail.com
+# date: 2014-03-20
+# usage:
+# tb engine texfile color fontfamily
+#    engine     [pdflatex/xelatex] 
+#    texfile    [main*.tex] 
+#    color      [blue/orange/green/red/purple/grey/black] 
+#    fontfamily [sans/roman]
+# e.g.: tb pdflatex main.tex red roman
+
+
+odir=/scratch/
+dir=`pwd`
+engine=${1:-pdflatex}
+file=${2:-main.tex}
+color=${3:-blue}
+fontfamily=${4:-roman}
+fullfile=$dir/$file
+
+# change color in pream.tex
+sed -i "s/moderncvcolor{.*}/moderncvcolor{$color}/g" $dir/pream.tex
+
+# change font family for default
+sed -i "s/moderncvcolor{.*}/moderncvcolor{$color}/g" $dir/pream.tex
+sed -i "s/documentclass\[11pt,a4paper,*\]{moderncv}/documentclass[11pt,a4paper,$fontfamily]{moderncv}/g" $dir/pream.tex
+
+$engine -output-directory=$odir $fullfile;
+$engine -output-directory=$odir $fullfile;
+$engine -output-directory=$odir $fullfile;
+
+vfile=`echo $file|sed 's/\.tex/.pdf/g'`
+
+echo "###################################################################"
+echo $engine -output-directory=$odir $fullfile;
+cat $dir/pream.tex
+echo "###################################################################"
+pdffonts $odir/$vfile
+evince $odir/$vfile

@@ -1,0 +1,98 @@
+% TODO:
+% DONE: ----------------------
+%1. all emails in \emaillink{}
+%2. add http links
+%3. ORCID
+%4. undergraduate research
+%5. Beijing Innovative research
+%6. Frontiers/face research
+%7. teaching
+%8. QQQ
+%9. formatting: black item
+% 10. formatting: page margin
+%11. reverse chronological
+%12. key courses
+%13: airfly
+%14: doi
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\input{pream}
+\input{font_conf}%       FONT CONFIGURATIONS
+
+\input{me}%	NAME AND CONTACT INFORMATION SECTION
+\input{bib_conf}%show numerical labels in the bib/multiple entries
+
+% select choice
+% ---------------------:
+\togglefalse{both}
+\toggletrue{onlyCV}
+%\togglefalse{onlyCV}
+
+
+% auto processing
+\iftoggle{both}{% produce both
+  \toggletrue{isCV}
+  \toggletrue{isPS}
+}{% only produce one of them
+% then which one?
+  \iftoggle{onlyCV}{%only CV
+    \toggletrue{isCV}
+    \togglefalse{isPS}
+  }{% only PS
+    \togglefalse{isCV}
+    \toggletrue{isPS}
+  }
+}
+
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}   % to typeset your resume in Chinese using CJK
+
+%-----       RESUME       ------------------------------------------------------
+\iftoggle{isCV}{%
+  % produce CV
+  \maketitle
+
+  \input{edu}%	EDUCATION SECTION
+  \input{interest}%	LANGUAGES SECTION
+  \input{work}%	WORK EXPERIENCE SECTION
+  \input{awards}
+%%\input{pubs}%   Publications
+  \input{lang}%	LANGUAGES SECTION
+  \input{cs_new}%	COMPUTER SKILLS SECTION
+
+  \clearpage
+
+}{%
+  % do something else, or nothing
+}
+
+
+
+%------- COVER LETTER ----------------------------------------------------------
+% To remove the cover letter, comment out this entire block
+
+\iftoggle{isPS}{%
+  % produce PS
+  \input{ps_pream}
+  \makelettertitle % Print letter title
+
+%\lipsum[1-19]
+  \input{ps}
+  
+  \iftoggle{both}{
+\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+}
+
+  \makeletterclosing % Print letter signature
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+
+}{%
+  %  do something else, or nothing
+}
+
+
+
+\end{document}

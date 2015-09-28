@@ -1,0 +1,149 @@
+% %\renewcommand*\familydefault{\sfdefault}
+% Only if the base font of the document is to be sans serif
+% to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+
+%\renewcommand{\sfdefault}{\rmdefault}
+%\renewcommand{\rmdefault}{\sfdefault}
+
+
+\ifxetex
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} % To support LaTeX quoting style
+%   \setromanfont{Garamond Premier Pro}
+\setromanfont{Adobe Garamond Pro}
+%\setsansfont{Droid Sans}
+\setsansfont{Myriad Pro}
+\else
+\usepackage[utf8]{inputenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% sans fonts
+
+%\usepackage{droid}
+%\usepackage[lf]{venturis} %% lf option gives lining figures as default;
+%\usepackage{arev}
+%\usepackage[default]{cantarell} %% Use option "defaultsans" to use cantarell as sans serif only
+%\usepackage{libertine}
+%\usepackage[default]{comfortaa}
+%\usepackage{DejaVuSans}
+%\usepackage{dejavu}
+%\usepackage{DejaVuSansCondensed}
+%\usepackage[math]{iwona}
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[scaled]{helvet}
+%\usepackage[default]{lato}
+%\usepackage[sfdefault]{merriweather} %% Option 'black' gives heavier bold face
+%\usepackage[black]{merriweather} %% Option 'black' gives heavier bold face
+%\usepackage{merriweather} %% Option 'black' gives heavier bold face
+%\usepackage[default,osfigures,scale=0.95]{opensans}
+%\usepackage[defaultsans,osfigures,scale=0.95]{opensans}
+%\usepackage{paratype}
+%\usepackage{PTSansCaption}
+%\usepackage{PTSerifCaption}
+%\usepackage[default]{sourcecodepro}
+%\usepackage[default]{sourcesanspro}
+%\usepackage{tgadventor}
+%\usepackage{tgheros} %enchanced HELVETICA font
+%\usepackage[lf]{venturis} %% lf option gives lining figures as default;
+
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% change the font for the title: roman
+%\documentclass[roman]{moderncv}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[sc]{mathpazo}
+%\usepackage{mathptmx}
+%\usepackage{tgschola}
+%\usepackage{tgbonum}
+%\usepackage{tgtermes}
+%\usepackage[black]{merriweather} %% Option 'black' gives heavier bold face
+%\usepackage{merriweather} %% Option 'black' gives heavier bold face
+%\usepackage[default]{droidserif}
+%\usepackage{DejaVuSerif}
+%\usepackage{dejavu}
+%\renewcommand*\rmdefault{dayroms}
+%\usepackage{bookman}
+%\usepackage{librebaskerville}
+%\usepackage[lining,scaled=.95]{ebgaramond} % The default is oldstyle numbers.
+%\usepackage{accanthis}
+%\usepackage{mathpazo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% change the font for the entire document
+
+%\documentclass{moderncv}
+%\usepackage{mathpazo}
+
+
+%\renewcommand{\rmdefault}{\sfdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change the font for some section,
+% \namefont \titlefont \addressfont \sectionfont \subsectionfont \hintfont \quotefont
+%\renewcommand*\namefont{\fontfamily{pzc}\fontsize{40}{48}\selectfont}
+%\renewcommand*\titlefont{\fontfamily{pzc}\fontsize{20}{24}\selectfont}
+%\renewcommand*\addressfont{\fontfamily{pzc}\selectfont}
+%\renewcommand*\sectionfont{\fontfamily{pzc}\fontsize{20}{24}\selectfont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%If you want to change the font for some particular argument(s) of,
+%for example, the \cventry command you can define your own command to
+%include the necessary redefinition(s); here's an example in which I
+%defined a \Mycventry command using Zapf Chancery for the
+%last argument of \cventry:
+
+% define the font
+%\newcommand\Mycventry[6]{%
+%  \cventry{#1}{#2}{#3}{#4}{#5}{\fontfamily{pzc}\selectfont#6}}
+
+% use the font in the body
+%\Mycventry{2012}{Title}{Institute}{City}{}{\fontfamily{pzc}\selectfont \lipsum[2]}
+%\cventry{2012}{Title}{Institute}{City}{}{\lipsum[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% change the font for the title
+%\documentclass[roman]{moderncv}
+%\usepackage{mathpazo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% change the font for the entire document
+
+%\documentclass{moderncv}
+%\usepackage{mathpazo}
+%\renewcommand{\sfdefault}{\rmdefault}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% change the font for some section,
+% \namefont \titlefont \addressfont \sectionfont \subsectionfont \hintfont \quotefont
+%\renewcommand*\namefont{\fontfamily{pzc}\fontsize{40}{48}\selectfont}
+%\renewcommand*\titlefont{\fontfamily{pzc}\fontsize{20}{24}\selectfont}
+%\renewcommand*\addressfont{\fontfamily{pzc}\selectfont}
+%\renewcommand*\sectionfont{\fontfamily{pzc}\fontsize{20}{24}\selectfont}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%If you want to change the font for some particular argument(s) of,
+%for example, the \cventry command you can define your own command to
+%include the necessary redefinition(s); here's an example in which I
+%defined a \Mycventry command using Zapf Chancery for the
+%last argument of \cventry:
+
+% define the font
+%\newcommand\Mycventry[6]{%
+%  \cventry{#1}{#2}{#3}{#4}{#5}{\fontfamily{pzc}\selectfont#6}}
+
+% use the font in the body
+%\Mycventry{2012}{Title}{Institute}{City}{}{\fontfamily{pzc}\selectfont \lipsum[2]}
+%\cventry{2012}{Title}{Institute}{City}{}{\lipsum[2]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
